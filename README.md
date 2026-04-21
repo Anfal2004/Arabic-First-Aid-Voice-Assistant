@@ -1,5 +1,6 @@
 # Arabic-First-Aid-Voice-Assistant
-نموذج ذكاء اصطناعي لتقديم إرشادات الإسعافات الأولية بالصوت وباللغة العربية## 📝 Overview
+نموذج ذكاء اصطناعي لتقديم إرشادات الإسعافات الأولية بالصوت وباللغة العربية 
+## 📝 Overview
 In high-stress medical emergencies, every second counts. This project introduces a specialized **Speech-to-Speech AI system** designed to provide immediate, medically verified first aid instructions in **Arabic**. By integrating **Automatic Speech Recognition (ASR)**, **Natural Language Processing (NLP)**, and **Text-to-Speech (TTS)**, our system offers a hands-free solution to guide users through life-saving procedures.
 
 ## ⚙️ Methodology & Proposed Solution
