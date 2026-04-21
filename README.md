@@ -1,23 +1,36 @@
 # Arabic-First-Aid-Voice-Assistant
-نموذج ذكاء اصطناعي لتقديم إرشادات الإسعافات الأولية بالصوت وباللغة العربية
-## 📝 Overview
-In emergency situations, people often struggle to react correctly due to panic, stress, or lack of immediate medical knowledge. This project introduces an innovative solution: a **Voice-Based AI Assistant** that provides immediate, step-by-step first aid instructions in **Arabic**. By leveraging AI, we aim to bridge the gap between the onset of an emergency and the arrival of professional medical help.
+نموذج ذكاء اصطناعي لتقديم إرشادات الإسعافات الأولية بالصوت وباللغة العربية## 📝 Overview
+In high-stress medical emergencies, every second counts. This project introduces a specialized **Speech-to-Speech AI system** designed to provide immediate, medically verified first aid instructions in **Arabic**. By integrating **Automatic Speech Recognition (ASR)**, **Natural Language Processing (NLP)**, and **Text-to-Speech (TTS)**, our system offers a hands-free solution to guide users through life-saving procedures.
 
-## ⚙️ How it Works (Methodology)
-The system is built through a sophisticated pipeline to ensure accuracy and speed:
-1. **Data Collection:** Built a specialized dataset of verified first aid scenarios based on official "Ministry of Health" (MOH) standards.
-2. **Speech-to-Text (SR):** Converts the user's spoken Arabic dialect into text for processing.
-3. **Natural Language Processing (LLM):** Utilizes Large Language Models to analyze the situation and retrieve the correct medical procedure.
-4. **Text-to-Speech (TTS):** Delivers instructions back to the user in a clear, audible Arabic voice to guide them through the rescue process.
+## ⚙️ Methodology & Proposed Solution
+The framework consists of three main components ensuring high accuracy and low latency:
 
-## 🎯 Key Objectives
-- Provide reliable and medically verified first aid content in Arabic.
-- Reduce response time during domestic emergencies.
-- Ensure accessibility for users who cannot read or type during high-stress moments.
+1. **Automatic Speech Recognition (ASR):** Powered by **OpenAI Whisper**, converting spoken Arabic emergency phrases into text, even in noisy environments.
+2. **Natural Language Processing (NLP):**
+   - **Model:** We utilized **AraBERT**, a transformer-based model specifically designed for the Arabic language.
+   - **Feature Enhancement:** Incorporated **TF-IDF word-importance scoring** to highlight influential terms (e.g., "إنجرح", "حرق") before classification.
+   - **Task:** Scenario classification into predefined labels (e.g., Burns, Injuries, Choking).
+3. **Text-to-Speech (TTS):** Uses **gTTS / ElevenLabs** to translate textual instructions into natural, expressive Arabic voice output.
+
+
+
+## 📊 Evaluation & Results
+### Model Training
+The **AraBERT** model was fine-tuned over 7 epochs. 
+- **Learning Curve:** Training loss dropped from 2.14 to **0.26**.
+- **Accuracy:** The F1-score rose sharply from 0.15 to **0.85**, demonstrating a strong ability to classify emergency categories correctly.
+
+![Model Performance](images/figure1_results.png)
+*Figure 1: Training and Validation loss/F1-score over epochs.*
+
+### System Prototype Demonstration
+In real-world testing, the system successfully transcribed complex sentences, identified key medical terms using TF-IDF, and predicted labels with high confidence (e.g., **0.973 confidence** for "Minor Wound").
+
+![System Output](images/figure2_demo.png)
+*Figure 2: End-to-end demonstration showing ASR transcription, AraBERT classification, and TTS output.*
 
 ## 🛠️ Tech Stack
-- **Language:** Python 🐍
-- **Development Environment:** Jupyter Notebook (`.ipynb`)
-- **Libraries & Frameworks:** - `Pandas` for data management.
-  - `PyTorch` / `Hugging Face` for AI model integration.
-  - Speech Recognition & TTS libraries.
+- **Deep Learning:** `PyTorch`, `Hugging Face Transformers` (AraBERT).
+- **Audio Processing:** `OpenAI Whisper`, `gTTS`, `FFmpeg`.
+- **Data Analysis:** `Pandas`, `NumPy`, `Scikit-learn` (TF-IDF, Stratified Sampling).
+- **Visualization:** `Matplotlib` (Confusion Matrix & Loss Curves).
