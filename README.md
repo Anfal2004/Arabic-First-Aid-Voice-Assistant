@@ -12,21 +12,19 @@ The framework consists of three main components ensuring high accuracy and low l
    - **Task:** Scenario classification into predefined labels (e.g., Burns, Injuries, Choking).
 3. **Text-to-Speech (TTS):** Uses **gTTS / ElevenLabs** to translate textual instructions into natural, expressive Arabic voice output.
 
-
-
 ## 📊 Evaluation & Results
 ### Model Training
 The **AraBERT** model was fine-tuned over 7 epochs. 
 - **Learning Curve:** Training loss dropped from 2.14 to **0.26**.
 - **Accuracy:** The F1-score rose sharply from 0.15 to **0.85**, demonstrating a strong ability to classify emergency categories correctly.
 
-![Model Performance](images/figure1_results.png)
+![Model Performance](images/figure1.png)
 *Figure 1: Training and Validation loss/F1-score over epochs.*
 
 ### System Prototype Demonstration
 In real-world testing, the system successfully transcribed complex sentences, identified key medical terms using TF-IDF, and predicted labels with high confidence (e.g., **0.973 confidence** for "Minor Wound").
 
-![System Output](images/figure2_demo.png)
+![System Output](images/figure2.png)
 *Figure 2: End-to-end demonstration showing ASR transcription, AraBERT classification, and TTS output.*
 
 ## 🛠️ Tech Stack
